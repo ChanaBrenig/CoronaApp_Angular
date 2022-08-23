@@ -58,8 +58,6 @@ export class ReportComponent {
           err => { console.log("failed to add location") });
     }
   }
-  // nextPage(): void {
-  //   window.location.href = "./view.component.html";
-  // }
+
  
 }

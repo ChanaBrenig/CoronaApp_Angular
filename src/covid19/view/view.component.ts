@@ -28,8 +28,6 @@ export class ViewComponent implements OnInit, AfterViewInit {
   constructor(private _viewService: ViewService, private _liveAnnouncer: LiveAnnouncer) {
   }
 
-  //???
-
 
   filterByCity() {
     this._viewService.getLocationsByCity(this.city)
@@ -39,8 +37,6 @@ export class ViewComponent implements OnInit, AfterViewInit {
         this.dataSource = new MatTableDataSource(this.reportList);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
-
-
       },
         err => { console.log("failed to filter by city") });
   }
@@ -48,7 +44,6 @@ export class ViewComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this._viewService.getLocations().subscribe((data) => {
       this.reportList = data;
-
       this.dataSource = new MatTableDataSource(this.reportList);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
@@ -58,18 +53,10 @@ export class ViewComponent implements OnInit, AfterViewInit {
       err => { console.log("failed to load locations data") });
   }
   ngAfterViewInit():void{
-//     setTimeout(() => {
-//       this.dataSource.paginator = this.paginator;
-//     this.dataSource.sort = this.sort;
-// }, 500);
     
   }
 
   announceSortChange(sortState: any) {
-    // This example uses English messages. If your application supports
-    // multiple language, you would internationalize these strings.
-    // Furthermore, you can customize the message to add additional
-    // details about the values being sorted.
     if (sortState.direction) {
       this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
     } else {

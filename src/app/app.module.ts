@@ -7,8 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSort } from '@angular/material/sort';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Route, RouterModule, Routes } from '@angular/router';
-import { ReportComponent } from 'src/covid19/report.component';
-import { ViewComponent } from 'src/covid19/view.component';
+import { ReportComponent } from 'src/covid19/report/report.component';
+import { ViewComponent } from 'src/covid19/view/view.component';
 import { MatMenuModule} from '@angular/material/menu';
 
 
